@@ -22,18 +22,16 @@
         <li>Apples</li>
         <li>Oranges</li>
         <li>Grapes</li>
-    </ul>
+        </ul>
 
     <h2>Definition or Description List</h2>
-    <dl>
-        <dt><strong>Cats</dt>
-            <dd>The cat is a domestic species of small cornivore mamal.</dd>
-            <br>
-            <dt><strong>Dogs</dt>
-            <dd>The dog is a domesticated decendant of the wolf.</dd>
-    </dl>
+            <dt><b>Cats</b></dt>
+        <dd>The cat is a domestic species of small carnivorous mammal. </dd>
+        <dt><b>Dogs</b></dt>
+        <dd>The dog is a domesticated descendant of the wolf.</dd>
+        </dl>
 
-    <h2>Tables</h2>
+    <h2 id="tables">Tables</h2>
     <table border="1">
         <tr>
             <td align="center">Column 1 </td>
@@ -53,7 +51,7 @@
     </table>
     <br><br>
     <table>
-        <tr>
+        <tr bgcolor = "lightblue">
             <td></td>
             <th>Saturday</th>
             <th>Sunday</th>
@@ -66,8 +64,91 @@
         <tr>
             <th>Total Sales</th>
             <td align="center">$600</td>
-            <td align="center">$675</td>
+            <td align="center" bgcolor = "lightpink">$675</td>
         </tr>
     </table>
+    <br><br>
+    <table bgcolor="lightgreen" width="400" height="120" border="1">
+       <thead> 
+        <tr bgcolor="lightgray">
+        <th colspan="2">Dancing Course Fee</th>
+        </tr>
+    </thead>
+       <tbody>
+        <tr>
+            <th>Adult, 18+ years-old</th>
+            <td align="center">$250.00</td>
+            </tr>
+            <tr align="center">
+            <th>Teen, between 10 and 17 years-old</th>
+            <td align="center">$135.55</td>
+            </tr>
+       </tbody>
+       <tfoot>
+        <tr>
+            <td colspan="2" align="center" bgcolor="white">Cash or Credit payment fee</td></tr>
+       </tfoot>
+             </table>
+             <h2 id="imagelink">Images</h2>
+             <hr>
+             <img src="images/nyc.jpg" alt="Image of New York City" width="300px" title="Visit New York City">
+             <img src="images/nyc.jpg" alt="Image of New York City" width="300px" title="Visit New York City">
+
+            <figure>
+                <img src="images/nyc.jpg" alt="Image of New York City" width="300px" title="Visit New York City">
+                <img src="images/nyc.jpg" alt="Image of New York City" width="300px" title="Visit New York City">
+                <figcaption>I love NYC -- 2025</figcaption>
+            </figure>
+            <h2 id="links">Links</h2>
+            <p>Link to open an external website</p>
+            <p>Visit <a href="https://www.qcc.cuny.edu/" target="_blank" rel="noopener noreferrer">QCC website</a> for more information!</p>
+         
+            <p><em>Link to an Email Address</em></p>
+            <p>Contact Aqsa Shahid <a href="aqsaa.shahid@gmail.com">by email</a></p>
+
+            <p><em>Link from an Image</em></p>
+            <figure>
+                <a href="https://www.nyc.gov/" target="_blank" rel="noopener noreferrer">
+                <img src="images/nyc.jpg" alt="Image of New York City" width="300px" title="Visit New York City">
+                </a>
+            </figure>
+            <br>
+            <p>Contact to QCC Social Media</p>
+            <figure>
+                <a href="https://www.facebook.com/QueensboroughCUNY" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook logo_icon.svg" alt="Connect to QCC facebook" title="Keep Connected to facebook" width="50px">
+                </a>
+                <a href="https://www.tiktok.com/@qcc_cuny" target="_blank" rel="noopener noreferrer">
+                    <img src="images/tiktok_logo_brand_icon.svg" alt="Connect to QCC tiktok" title="Keep Connected to tiktok" width="50px">
+                    </a>
+            </figure>
+            <br>
+            <p id="places"><em>Link to an internal/local webpages</em></p>
+            <ul>
+                <li><a href="Centralpark.html">Central Park</a></li>
+                <li><a href="Times_Square.html">Times Square</a></li>
+            </ul>
+            <br>
+<p><em>Image Mapping</em></p>
+<!--Target map-->
+            <figure>
+                <img src="images/nyc.jpg" alt="Image of New York City" width="500px" height="400px" title="Visit New York City" usemap="#nyc_map">
+                <figcaption>I love NYC -- 2025</figcaption>
+            </figure>
+<!-- Define map -->
+ <map name="nyc_map">
+    <area shape="rect" coords="200,150,300,250" href="Centralpark.html" alt="Link to Central Park Webpage">
+ </map>
+ <br><br>
+ <p><em>Link to a specific section of the same webpage</em></p>
+ <nav>
+    <a href="#">Go to the beginning</a>
+    <span>|</span>
+    <a href="#tables">Tables</a>
+    <span>|</span>
+    <a href="#links">Links</a>
+    <span>|</span>
+    <a href="#imagelink">Images</a>
+ </nav>
 </body>
 </html>
