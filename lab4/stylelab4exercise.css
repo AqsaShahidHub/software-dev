@@ -1,0 +1,228 @@
+
+* {
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #fff;
+    padding: 20px;
+    overflow: hidden; 
+    box-shadow: 0 2px 8px gray; 
+}
+
+/* Float layout for header divisions */
+.image-division {
+    float: left;
+    width: 30%;
+}
+
+.image-division img {
+    max-height: 150px;
+    width: auto;
+}
+
+.title-division {
+    float: right;
+    width: 70%;
+    text-align: right;
+}
+
+.title-division h1 {
+    font-family: 'Georgia', serif;
+    font-size: 28px; 
+    color: #182e46; 
+    padding: 5px 0; 
+}
+
+.title-division p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* Navigation styling */
+nav {
+    width: 100%; /* Full-width navigation bar */
+    background-color: #32606e; /* Background color */
+}
+
+nav ul {
+    display: flex; /* Flexbox for horizontal alignment */
+    list-style: none; /* Remove default bullets */
+    justify-content: center; /* Center items horizontally */
+}
+
+nav li {
+    margin: 0; /* Remove default margins */
+}
+
+nav a {
+    display: inline-block; /* Better alignment */
+    padding: 15px 20px;
+    color: #ecf0f1; /* Text color */
+    text-decoration: none;
+    text-align: center; /* Text alignment */
+    font-weight: 500;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    background-color: #686d70; /* Background color change on hover */
+    color: #fff; /* Text color change on hover */
+}
+
+/* Introduction Section styling */
+.intro-section {
+    display: flex; /* Flexbox layout */
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.intro-image {
+    flex: 1; /* Take up proportional space */
+    max-width: 45%; /* Ensure responsiveness */
+    padding-right: 20px;
+}
+
+.intro-image img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.intro-text {
+    flex: 1; /* Take up proportional space */
+    max-width: 55%; /* Ensure responsiveness */
+    text-align: left; /* Typography styling - text alignment */
+    padding: 0 0 0 20px; /* Typography styling - padding */
+}
+
+.intro-text h2 {
+    font-size: 24px; /* Typography styling - font size */
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.intro-text p {
+    font-size: 16px; /* Typography styling - font size */
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section:not(.intro-section) {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+.card-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    background-color: #fff;
+    width: 32%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .card p {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .card a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #fafafa;
+  }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #772505;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .image-division, .title-division {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .image-division {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+    }
+    
+    nav a {
+        display: block; /* Full width links on smaller screens */
+    }
+}
