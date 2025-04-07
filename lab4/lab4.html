@@ -26,7 +26,7 @@
     <p id="intro">CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear.CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear</p>
     <p>CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear. CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear</p>
     <p class="author">By: Aqsa Shahid</p>
-    <h2 class="author">Typology</h2>
+    <h2 class="author" id="typology">Typology</h2>
     <p class="author">Styling text</p>
     <p class="fontweight">Paragraph with font-weight bold</p>
     <p class="fontstyle">Paragraph with font Style</p>
@@ -61,7 +61,7 @@
     <div class="radiusbox4">Box 4</div>
     <div class="radiusbox5">Box 5</div>
 
-<h2 class="subtitle">Basic Image Formatting</h2>
+<h2 class="subtitle" id="images">Basic Image Formatting</h2>
 <img class="blossomimg blossom1" src="images/image1.jpg" alt="Image of a Blossom Tree">
 <img class="blossomimg blossom2" src="images/image1.jpg" alt="Image of a Blossom Tree">
 <img class="blossomimg blossom3" src="images/image1.jpg" alt="Image of a Blossom Tree">
@@ -112,7 +112,7 @@
         <section class="images">Images Container</section>
 </main>
 
-<h2>Cards</h2>
+<h2 id="cards">Cards</h2>
 <section class="cardcontainer">
     <div class="card">
         <img class="imgcard" src="images/image1.jpg" alt="image of a bloom tree">
@@ -139,13 +139,71 @@
     </div>
     
     <div class="card2">
-        <img class="imgcard" src="images/image1.jpg" alt="image of a bloom tree">
-        <h2 class="cardtitle">Brooklyn Botanic Garden</h2>
-        <p class="cardinfo">Brooklyn Botanic Garden (BBG) is a botanical garden occupies 52 acres (21 ha) in central Brooklyn, close to Mount Prospect</p>
+        <img class="imgcard" src="images/image1.jpg" alt="image of a blossom tree">
+        <h2 class="cardtitle">Brooklyn Botanical Garden</h2>
+        <p class="cardinfo">Brooklyn Botanical Garden (BBG) is a botanical garden occupies 52 acres (21 ha) in central Brooklyn, close to Mount Prospect</p>
         <a class="linkcard2" href="https://www.bbg.org/collections/cherries" target="_blank" rel="noopener noreferrer">Visit Bloosom Garden</a>
     </div>
-
 </section>
 
+    <h2 class="subtitle">Navigation tabs</h2>
+    <ul class="navbar">
+    <li><a href="#">Home</a></li>
+    <li><a href="#typology">Typology</a></li>
+    <li><a href="#images">images</a></1i>
+    <li><a href="#cards">Cards</a></1i>
+    </ul>
+
+    <h2 class="subtitle">Colors</h2>
+    <h3>RGB Value</h3>
+    <section Class="rgbcontainer">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    
+    <h3>Hex Code</h3>
+      <section Class="hexcontainer">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <h2 class="subtitle">Positions</h2> 
+    <div class="imgcontainer">
+    <img src="images/image1.jpg" alt="image of a blossom tree">
+    <p class="imgtitle">Brooklyn Botanical Garden</p>
+    </div>
+
+    <h2 class="subtitle">Background Image</h2>
+    <section class="imgbackground">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <p>Linear gradient with 2+ colors</p>
+    <section class="imgbackground2">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <h2>Hero image with linear-gradient</h2>
+    <section class="heroimgcontainer">
+    <div class="herocontent">
+        <h3 class="herocontent_title">Brooklyn Botanical Garden</h3>
+        <p class="herocontent_intro">Spring Cherries blossom collection</p>
+        <a class="herocontent_link" href="https://www.bbg.org/collections/cherries" target="_blank" rel="noopener noreferrer" >More Info</a>
+    </div>
+    </section> 
+
+    <nav class="navbarhorizontal fixedtabs">
+        <a href="#">Home</a>
+        <a href="#typology">Typology</a>
+        <a href="#images">images</a>
+        <a href="#cards">Cards</a>
+        </nav>
+        
 </body>
 </html>
