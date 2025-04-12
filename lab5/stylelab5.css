@@ -133,9 +133,7 @@ padding: 2rem;
 
 /* Navigation Tabs*/
 .navcontainer{
-    position: fixed;
-    top: 0%;
-    background-color:rgba(50, 50, 50, 0.7);
+   background-color:rgba(50, 50, 50, 0.7);
     width:100%;
     display: flex;
     justify-content: center;
@@ -176,4 +174,4 @@ padding: 2rem;
     .collapsenavbars{display: inline-block;}
     .navbars{display: none;}
 
-}}
+}
