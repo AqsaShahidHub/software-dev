@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 7, Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Navigation tabs</h1>
+    <section class="dropdown dropend">
+        <button type="button" class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">CUNY Community Colleges</button>
+    <ul class="dropdown-menu">
+        <li><p class="dropdown-header bg-secondary text-light">Queens</p></li>
+        <li><a href="" class="dropdown-item">Queenborough CC</a></li>
+        <li><a href="" class="dropdown-item">LaGuaardia CC</a></li>
+        <li><a href="" class="dropdown-item">Bronx CC</a></li>
+    </ul>    
+    </section>
+
+    <section class="btn-group mt-5">
+        <button class="btn-btn-danger">Home</button>
+        <button class="btn-btn-danger dropdown-toggle" data-bs-toggle="dropdown">CUNY Community Colleges</button>
+        <button class="btn-btn-danger">Bootstrap</button>
+         <!-- dropdown menu -->
+        <ul class="dropdown-menu">
+            <li><p class="dropdown-header bg-secondary text-light">Queens</p></li>
+            <li><a href="" class="dropdown-item">Queensborough CC</a></li>
+            <li><a href="" class="dropdown-item">LaGuaardia CC</a></li>
+            <li><a href="" class="dropdown-item">Bronx CC</a></li>
+        </ul>   
+    </section>
+    <h1>Grid System</h1>
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 bg-warning border border-dark" style="height: 50px;">box 1</div>
+            <div class="col-sm-6 col-md-4 col-lg-2 bg-warning border border-dark" style="height: 50px;">box 2</div>
+            <div class="col-sm-12 col-md-4 col-lg-5 bg-warning border border-dark" style="height: 50px;">box 3</div>
+            <div class="col-sm-7 col-md-9 col-lg-2 bg-warning border border-dark" style="height: 50px;">box 4</div>
+            <div class="col-sm-2 col-md-2 col-lg-9 bg-warning border border-dark" style="height: 50px;">box 5</div>
+        </div>        
+    </section>
+
+
+<main class="mt-5">
+    <section class="row justify-content-center">
+        <!-- card 1-->
+        <div class="card col-lg-2 col-md-5 col-sm-10 m-3">
+            <div class="card-body">
+                <img src="images/image1.jpg" class="card-img">
+                <h2 class="card-title text-danger">Cherry Blossom Season</h2>
+                <p class="card-subtitle text-secondary">Brooklyn Botanical Garden, BBG</p>
+                <p class="card-text">Now at BBG the new glooming season of Cherry Blossom trees</p>
+                <a href="" class="card-link">Visit BBG</a>
+            </div>
+        </div>
+ <!-- card 2 -->
+  <div class="card col-lg-2 col-md-5 col-sm-10 m-3 bg-dark">
+    <header class="card-header">
+        <h2 class="card-title text-danger">Cherry Blossom Season</h2>
+        <p class="card-subtitle text-light">Brooklyn Botanical Garden, BBG</p>
+    </header>
+    <main class="card-body">
+        <img src="images/image1.jpg" class="card-img">
+        <p class="card-text text-light">Now at BBG the new glooming season of Cherry Blossom trees</p>
+    </main>
+    <footer class="card-footer bg-danger">
+        <a href="" class="card-link text-light">visit BBG</a>
+    </footer>
+  </div>
+  <!-- card 3 -->
+   <div class="card col-lg-2 col-md-5 col-sm-10 m-3">
+    <img src="images/image1.jpg" class="card-img">
+    <main class="card-body">
+        <h2 class="card-title text-danger">Cherry Blossom Season</h2>
+        <p class="card-subtitle text-secondary">Brooklyn Botanical Garden, BBG</p>
+        <p class="card-text text-secondary">Now at BBG the new glooming season of Cherry Blossom trees</p>
+    </main>
+    <footer class="card-footer bg-danger">
+        <a href="" class="card-link text-secondary">visit BBG</a>
+    </footer>
+   </div>
+
+    <!-- card 4 -->
+    <div class="card col-lg-2 col-md-5 col-sm-10 m-3">
+        <img src="images/image1.jpg" class="card-img">
+        <main class="card-body">
+            <h2 class="card-title text-danger">Cherry Blossom Season</h2>
+            <p class="card-subtitle text-secondary">Brooklyn Botanical Garden, BBG</p>
+            <p class="card-text text-secondary">Now at BBG the new glooming season of Cherry Blossom trees</p>
+        </main>
+        <footer class="card-footer bg-danger">
+            <a href="" class="card-link text-light">visit BBG</a>
+        </footer>
+       </div>
+    </section>
+</main>
+
+
+<h1 class="mt-5">Carousel of Text</h1>
+<section class="carousel" data-bs-ride="carousel">
+    <div class="carousel-inner bg-warning text-center p-2 display-5">
+        <div class="carousel-item active">Toys Flash Sale <span class="display-3 text-danger fw-bold ">40%</span> off</div> 
+    <div class="carousel-item"><span class="display-3 text-danger fw-bold">Free</span> Shipping</div>
+    <div class="carousel-item"><span class="display-3 text-danger fw-bold">New</span> Summer Collection</div>
+</div>
+</section>
+
+<h1 class="mt-5">Carousel of Images</h1>
+<section class="carousel slide carousel-fade w-50 mx-auto" data-bs-ride="carousel" data-bs-intervel="3000" id="imgcarousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active"> <img src="images/lab7-1.jpg" class="d-block w-100">
+        <div class="carousel-caption rounded" style="background-color: rgba(113, 174, 209, 0.5);">
+            <p class="h3 text-primary"> Jogging in the park</p>
+            <p>A great way to clear your mind, enjoy nature, and stay active.</p>
+        </div>
+    </div>
+    <div class="carousel-item"> <img src="images/lab7-2.jpg" class="d-block w-100">
+        <div class="carousel-caption roundrd" style="background-color: rgba(255,255,255, 0.5);">
+            <p class="h3 text-primary"> Taking a break</p>
+            <p>A great way to clear your mind, enjoy nature, and stay active.</p>
+        </div></div>
+    <div class="carousel-item"> <img src="images/lab7-3.jpg" class="d-block w-100">
+        <div class="carousel-caption" style="background-color: rgba(94, 89, 89, 0.5);">
+            <p class="h3 text-primary"> Enjoy nature with friends</p>
+            <p >A great way to clear your mind, enjoy nature, and stay active.</p>
+        </div></div>
+    </div>
+    <!-- next and previous control -->
+<button class="carousel-control-prev" type="button" data-bs-target="#imgcarousel" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#imgcarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</button>
+    <!-- indicators -->
+     <div class="carousel-indicators">
+        <button type="button" class="active" data-bs-target="#imgcarousel" data-bs-slide-to="0"></button>
+        <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="2"></button>
+     </div>
+</section>
+
+<h1>Navigation Tabs</h1>
+<nav class="nav nav-tabs bg-light justify-content-end">
+    <a href="" class="nav-link active">Home</a>
+    <a href="" class="nav-link">Service</a>
+    <a href="" class="nav-link">Mission</a>
+    <a href="" class="nav-link">Staff</a>
+    <a href="" class="nav-link">Contact</a>
+</nav>
+
+
+<h1>Navigation with Collapsible</h1>
+<nav class="navbar navbar-dark navbar-expand bg-dark fixed-top p-3">
+  
+        <a href="" class="navbar-brand">
+            <img src="images/image1.jpg" class="rounded-circle" style="width: 100px; height: 100px;">
+        </a> 
+        <h1 class="text-light text-center w-100">Find your way home</h1>
+
+ <!-- Menu-->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsemenu">
+    <span>Menu</span>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <!-- Dropdown Menu-->
+    <section class="collapse navbar-collapse" id="collapsemenu">
+        <nav class="navbar-nav ms-auto">
+            <a href="" class="nav-link nav-item">Home</a>
+            <a href="" class="nav-link nav-item">Service</a>
+            <a href="" class="nav-link nav-item">Staff</a>
+        </nav>
+        
+    </section>
+</nav>
+
+
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top p-3">
+    <div class="container-fluid">
+      <a href="" class="navbar-brand">
+        <img src="images/image1.jpg" class="rounded-circle" style="width: 100px; height: 100px;">
+      </a>
+      <h1 class="text-light text-center">Find your way home</h1>
+      
+      <!-- Menu button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsemenu">
+        <span>Menu</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Dropdown Menu -->
+      <div class="collapse navbar-collapse" id="collapsemenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Service</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Staff</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+        <h1 id="userform">Forms</h1>
+            <form action="thankyou.html" class="w-50 bg-light mx-auto p-3 border border-success">
+            <legend class="text-center text-success fw-bold">User Registration</legend>
+            <div class="mt-3">
+            <label for="useremail" class="form-label">Email Address:</label>
+            <input type="text" id="useremail" class="form-control" placeholder="template@host.com..." required>
+            </div>
+            <div class="mt-3">
+        <label for="userpassword" class="form-label">Enter a password</label>
+        <input type="password" name="password" id="userpassword" class="form-control" required>
+            </div>
+            <div class="form-text">
+                <p>Password must have between 8-20 characters</p>
+            </div>
+
+            <div class="mt-3 form-check">
+                <label for="agreementcheck" class="form-label">Check the box if you agree with the conditions</label>
+                <input class="form-check-input" type="checkbox" name="useragreement" id="agreementcheck" >
+            </div>
+
+            <div class="mt-3">
+                <label for="aboutus">Where did you hear about us?</label>
+                <div class="form-check" id="aboutus">
+                    <label class="form-check-label" for="news" >News</label>
+                    <input class="form-check-input" type="checkbox" name="aboutusfeedback" id="news">
+                </div>
+
+                <div class="form-check">
+                    <label  class="form-check-label" for="qccwebsite" >QCC Website</label>
+                    <input class="form-check-input" type="checkbox" name="aboutusfeedback" id="qccwebsite">
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label" for="google">Google Search</label>
+                    <input class="form-check-input" type="checkbox" name="aboutusfeedback" id="google">
+                </div>
+
+            </div>
+
+            <section class="mt-3">
+                <label for="agerange">Select your age group:</label>
+                <div id="agerange">
+                    <div class="form-check">
+                        <label class="form-check-label" for="age18_25">18-25 years old</label>
+                        <input class="form-check-input" type="radio" id="age18_25" name="agegroup">
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label" for="age26_35">26-35 years old</label>
+                        <input class="form-check-input" type="radio" id="age26_35" name="agegroup">
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label" for="age36plus">36+ years old</label>
+                        <input class="form-check-input" type="radio" id="age36plus" name="agegroup">
+                    </div>
+                </div>
+            </section>
+            <section class="mt-3">
+                <div>
+                    <label for="appointment">When do you want to meet?</label>
+                    <input  class="form-control" type="date" name="userappointment" id="appointment">
+                </div>
+                <div>
+                    <label for="uploadfile">Upload files</label>
+                    <input class="form-control" type="file" name="userfile" id="uploadfile">
+                </div>
+
+            </section>
+
+            <section class="mt-3">
+                <label for="state">Select your state:</label>
+                <select class="form-control" name="userstate" id="state">
+                    <option value="" selected>...</option>
+                    <option value="NY">New York</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="MA">Massachuchusetts</option>
+                </select>
+            </section>
+
+            <section class="mt-3">
+                <label for="comments">Comments</label>
+                <textarea class="form-control" name="usercomments" id="comments" rows="5" placeholder="Max 2000 characters"></textarea>
+            </section>
+            <section class="mt-3">
+                <button class="btn btn-danger" type="submit">Submit Form</button>
+            </section>
+            </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
