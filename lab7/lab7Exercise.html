@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Recipe Collection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>My Recipe Collection</h1>
+            </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Recipe Categories Accordion -->
+        <div class="accordion" id="recipeAccordion">
+            <!-- Breakfast Category -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="breakfastHeading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#breakfastCollapse" aria-expanded="true" aria-controls="breakfastCollapse">
+                        Breakfast Recipes
+                    </button>
+                </h2>
+                <div id="breakfastCollapse" class="accordion-collapse collapse show" aria-labelledby="breakfastHeading" data-bs-parent="#recipeAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <!-- Recipe Card -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img src="images/breakfast.jpg" class="card-img-top" alt="Pancakes">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Fluffy Pancakes</h5>
+                                        <p class="card-text">Easy homemade pancakes perfect for breakfast.</p>
+                                        <button class="btn btn-primary">View Recipe</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lunch Category -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="lunchHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lunchCollapse" aria-expanded="false" aria-controls="lunchCollapse">
+                        Lunch Recipes
+                    </button>
+                </h2>
+                <div id="lunchCollapse" class="accordion-collapse collapse" aria-labelledby="lunchHeading" data-bs-parent="#recipeAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <!-- Recipe Card -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img src="images/lunch.jpg" class="card-img-top" alt="Sandwich">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Chicken Sandwich</h5>
+                                        <p class="card-text">Tasty sandwich with grilled chicken.</p>
+                                        <button class="btn btn-primary">View Recipe</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dinner Category -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="dinnerHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dinnerCollapse" aria-expanded="false" aria-controls="dinnerCollapse">
+                        Dinner Recipes
+                    </button>
+                </h2>
+                <div id="dinnerCollapse" class="accordion-collapse collapse" aria-labelledby="dinnerHeading" data-bs-parent="#recipeAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <!-- Recipe Card -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img src="images/dinner.jpg" class="card-img-top" alt="Pasta">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Spaghetti</h5>
+                                        <p class="card-text">Classic pasta with tomato sauce.</p>
+                                        <button class="btn btn-primary">View Recipe</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Simple Recipe Collection</p>
+        </div>
+    </footer>
+
+   
+    
+  
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
