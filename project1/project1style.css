@@ -1,10 +1,12 @@
 
+
 /* Custom Styles */
 :root {
     --primary-color: #4361ee;
     --secondary-color: #3f37c9;
     --accent-color: #4cc9f0;
-  
+    --light-bg: #f8f9fa;
+    --dark-bg: #212529;
 }
 
 body {
@@ -13,16 +15,119 @@ body {
     padding-top: 60px;
 }
 
-.navbar-brand {
+
+h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: #720f51;
 }
 
+.navbar-brand {
+    font-weight: 700;
+    color: #4361ee;
+}
 
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/hero.jpg');
+    background-size:auto;
+    color: #fdfdfd;
     padding: 40px 0;
     border-radius: 0 0 20px 20px;
     margin-bottom: 30px;
 }
+
+.divider {
+    width: 150px;
+    margin: 1.5rem auto;
+    border-top: 3px solid var(--primary-color);}
+
+.course-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-card .card-img-top {
+    height: 160px;
+    object-fit:contain;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+.badge-custom {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 3px solid var(--primary-color);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+}
+
+.nav-tabs .nav-link {
+    color: #6c757d;
+    border: none;
+}
+
+
+
+/* Profile avatar animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(67, 97, 238, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+}
+
+.profile-avatar {
+    animation: pulseGlow 2s infinite;
+    border-radius: 50%;
+}
+
+/* Media Queries for Responsive Design */
+/* Mobile View */
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .course-card .card-title {
+        font-size: 1.1rem;
+    }
+    .sidebar {
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet View */
+@media (min-width: 577px) and (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .sidebar {
+        margin-bottom: 30px;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 992px) {
+    .sidebar {
+        position: sticky;
+        top: 80px;
+    }
+}
+
+
+
+

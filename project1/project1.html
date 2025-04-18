@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,8 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="project1style.css" rel="stylesheet">
-   
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+
 </head>
 <body>
     <!-- Navigation -->
@@ -29,7 +31,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#resources">Resources</a>
-
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile">
+                            <img src="images/Profile.jpg" alt="Profile" class="rounded-circle" width="30">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,16 +52,320 @@
                 <div class="col-lg-6">
                     <h1>Master <span class="text-warning">Programming</span> at Your Own Pace</h1>
                     <marquee><p class="lead">Learn with interactive lessons, coding challenges, and real-world projects.</p></marquee>
+                    <hr class="divider">
+                    <p class="lead"><strong>Master programming languages</strong> with interactive lessons, real-world projects, and <em>supportive community</em></p>
                     <a href="#courses" class="btn btn-light btn-lg">Browse Courses</a>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="images/fundamentals.svg" alt="Coding Illustration" class="img-fluid">
+                    <!-- <img src="images/hero.jpg" alt="Coding Illustration" class="img-fluid"> -->
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+           
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="col-lg-9">
+                <!-- Tabs Navigation -->
+                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses-pane" type="button" role="tab">My Courses</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="achievements-tab" data-bs-toggle="tab" data-bs-target="#achievements-pane" type="button" role="tab">Achievements</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="recommended-tab" data-bs-toggle="tab" data-bs-target="#recommended-pane" type="button" role="tab">Recommended</button>
+                    </li>
+                </ul>
+                
+                <!-- Tab Content -->
+                <div class="tab-content" id="myTabContent">
+                    <!-- My Courses Tab -->
+                    <div class="tab-pane fade show active" id="courses-pane" role="tabpanel">
+                        <h4 class="mb-4">My Learning Path</h4>
+                        
+                        <div class="row g-4" id="courses">
+                            <!-- Course Card 1 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card">
+                                    <img src="images/html.jpg" class="card-img-top" alt="HTML5 Basics">
+                                    <div class="card-body">
+                                        <span class="badge badge-custom mb-2">In Progress</span>
+                                        <h5 class="card-title">HTML5 Fundamentals</h5>
+                                        <p class="card-text">Learn the basics of HTML5 and build your first web pages from scratch.</p>
+                                        <div class="progress mb-3" style="height: 5px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                           
+                                            <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Course Card 2 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card">
+                                    <img src="images/css3.jpg" class="card-img-top" alt="CSS3 Course">
+                                    <div class="card-body">
+                                        <span class="badge badge-custom mb-2">In Progress</span>
+                                        <h5 class="card-title">CSS3 Styling Mastery</h5>
+                                        <p class="card-text">Style your websites with modern CSS techniques and responsive design.</p>
+                                        <div class="progress mb-3" style="height: 5px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                           
+                                            <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Course Card 3 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card">
+                                    <img src="images/javascript.jpg" class="card-img-top" alt="JavaScript Course">
+                                    <div class="card-body">
+                                        <span class="badge bg-secondary mb-2">Coming Up</span>
+                                        <h5 class="card-title">JavaScript Essentials</h5>
+                                        <p class="card-text">Add interactivity to your websites with JavaScript and DOM manipulation.</p>
+                                        <div class="progress mb-3" style="height: 5px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            
+                                            <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Course Card 4 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card">
+                                    <img src="images/Bootstrap-img.png" class="card-img-top" alt="Bootstrap Course">
+                                    <div class="card-body">
+                                        <span class="badge bg-success mb-2">Completed</span>
+                                        <h5 class="card-title">Bootstrap Framework</h5>
+                                        <p class="card-text">Build responsive websites quickly with the Bootstrap framework.</p>
+                                        <div class="progress mb-3" style="height: 5px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                          
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Review</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Course Card 5 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card">
+                                    <img src="images/responsive-web-design-.jpg" class="card-img-top" alt="Responsive Design">
+                                    <div class="card-body">
+                                        <span class="badge badge-custom mb-2">In Progress</span>
+                                        <h5 class="card-title">Responsive Web Design</h5>
+                                        <p class="card-text">Create websites that look great on all devices with responsive techniques.</p>
+                                        <div class="progress mb-3" style="height: 5px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                         
+                                            <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Course Card 6 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card course-card">
+                                    <img src="images/Web-Development.jpg" class="card-img-top" alt="Web Projects">
+                                    <div class="card-body">
+                                        <span class="badge bg-secondary mb-2">Coming Up</span>
+                                        <h5 class="card-title">Web Project Portfolio</h5>
+                                        <p class="card-text">Build 5 real-world projects to showcase your front-end development skills.</p>
+                                        <div class="progress mb-3" style="height: 5px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                          
+                                            <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievements Tab -->
+                    <div class="tab-pane fade" id="achievements-pane" role="tabpanel">
+                        <h4 class="mb-4">Your Achievements</h4>
+                        <div class="row">
+                            <div class="col-md-4 mb-4 text-center">
+                                <div class="card h-100 p-3">
+                                    <i class="bi bi-trophy text-warning" style="font-size: 3rem;"></i>
+                                    <div class="card-body">
+                                        <h5 class="card-title">First HTML Page</h5>
+                                        <p class="card-text">Successfully created your first HTML webpage</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4 text-center">
+                                <div class="card h-100 p-3">
+                                    <i class="bi bi-star text-warning" style="font-size: 3rem;"></i>
+                                    <div class="card-body">
+                                        <h5 class="card-title">CSS Master</h5>
+                                        <p class="card-text">Completed 3 styling challenges in a row</p>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4 text-center">
+                                <div class="card h-100 p-3 bg-light">
+                                    <i class="bi bi-lock text-secondary" style="font-size: 3rem;"></i>
+                                    <div class="card-body">
+                                        <h5 class="card-title">JavaScript Ninja</h5>
+                                        <p class="card-text">Complete the JavaScript course to unlock</p>
+                                        <small class="text-muted">Not yet earned</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Tab -->
+                    <div class="tab-pane fade" id="recommended-pane" role="tabpanel">
+                        <h4 class="mb-4">Recommended For You</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card course-card">
+                                    <img src="images/react.svg" class="card-img-top" alt="React Course">
+                                    <div class="card-body">
+                                        <h5 class="card-title">React.js Fundamentals</h5>
+                                        <p class="card-text">Based on your progress, this course would be a great next step!</p>
+                                        <a href="#" class="btn btn-outline-primary">Add to Learning Path</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card course-card">
+                                    <img src="images/cssanime.jpg" class="card-img-top" alt="CSS Animation">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Advanced CSS Animations</h5>
+                                        <p class="card-text">Enhance your websites with impressive animations and transitions.</p>
+                                        <a href="#" class="btn btn-outline-primary">Add to Learning Path</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     
   
+   
+<!-- Contact Form -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="text-center mb-4">Get In Touch</h3>
+                <form class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select class="form-select" id="subject">
+                                <option selected>Select a subject</option>
+                                <option value="1">Course Question</option>
+                                <option value="2">Technical Support</option>
+                                <option value="3">Billing Inquiry</option>
+                                <option value="4">Feature Request</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your message here..."></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="newsletter">
+                            <label class="form-check-label" for="newsletter">
+                                Subscribe to our newsletter for updates
+                            </label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Sign In to CodeMaster</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p class="mb-2">Or sign in with:</p>
+                        <button type="button" class="btn btn-outline-dark me-2"><i class="bi bi-google"></i> Google</button>
+                        <button type="button" class="btn btn-outline-dark"><i class="bi bi-github"></i> GitHub</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                        <p class="mt-2 mb-0">Don't have an account? <a href="#" class="text-decoration-none">Sign up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
