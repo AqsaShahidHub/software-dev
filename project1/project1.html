@@ -1,290 +1,537 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeMaster Learning Platform - Master programming with interactive lessons, coding challenges, and real-world projects">
+    <meta name="keywords" content="coding, programming, web development, learning platform, HTML, CSS, JavaScript">
     <title>CodeMaster Learning Platform</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="project1style.css" rel="stylesheet">
-    <script src="https://unpkg.com/scrollreveal@4"></script>
-
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#"><i class="bi bi-code-square"></i> CodeMaster</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#resources">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#profile">
-                            <img src="images/Profile.jpg" alt="Profile" class="rounded-circle" width="30">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1>Master <span class="text-warning">Programming</span> at Your Own Pace</h1>
-                    <marquee><p class="lead">Learn with interactive lessons, coding challenges, and real-world projects.</p></marquee>
-                    <hr class="divider">
-                    <p class="lead"><strong>Master programming languages</strong> with interactive lessons, real-world projects, and <em>supportive community</em></p>
-                    <a href="#courses" class="btn btn-light btn-lg">Browse Courses</a>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <!-- <img src="images/hero.jpg" alt="Coding Illustration" class="img-fluid"> -->
+    <!-- Header -->
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#"><i class="bi bi-code-square"></i> CodeMaster</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resources">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#profile" aria-label="Profile">
+                                <img src="images/Profile.jpg" alt="Profile" class="rounded-circle" width="30" height="30">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- Main Content -->
-    <div class="container my-5">
-        <div class="row">
-           
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <h1>Master <span class="text-warning">Programming</span><br><span class="pulse-animation d-inline-block"> at Your Own Pace</span></h1>
+                        <p class="lead">Learn with interactive lessons, coding challenges, and real-world projects.</p>
+                        <hr class="divider">
+                        <p class="lead"><strong>Master programming languages</strong> with interactive lessons, real-world projects, and <em>supportive community</em></p>
+                        <a href="#courses" class="btn btn-light btn-lg">Browse Courses</a>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Main Content Area -->
-            <div class="col-lg-9">
-                <!-- Tabs Navigation -->
-                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses-pane" type="button" role="tab">My Courses</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="achievements-tab" data-bs-toggle="tab" data-bs-target="#achievements-pane" type="button" role="tab">Achievements</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="recommended-tab" data-bs-toggle="tab" data-bs-target="#recommended-pane" type="button" role="tab">Recommended</button>
-                    </li>
-                </ul>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container my-5">
+            <div class="row">
+                <!-- Sidebar - User Profile -->
+                <aside class="col-lg-3 sidebar">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="profile-header text-center">
+                                <img src="images/Profile.jpg" alt="User Avatar" class="rounded-circle mb-3 profile-avatar" width="100" height="100">
+                                <h5>Aqsa</h5>
+                                <p class="text-muted">Web Development Path</p>
+                                <hr>
+                            </div>                       
+                            <div class="profile-content">
+                                <div>
+                                    <h5><i class="bi bi-pie-chart-fill me-2"></i>Learning Stats</h5>
+                                    <hr>
+                                    <p><strong>Learning streak:</strong> 15 days</p>                                 
+                                    <p><strong>Courses completed:</strong> 3</p>
+                                    <p><strong>Exercises completed:</strong> 78</p>
+                                    <p><strong>Hours spent learning:</strong> 45 hours</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Overall Progress:</span>
+                                <span class="fw-bold">42%</span>
+                            </div>                
+                            <div class="progress mb-4">
+                                <div class="progress-bar" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="d-grid">
+                                <a href="#profile" class="btn btn-outline-primary">View Full Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title mb-0">Learning Streak</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h2 class="mb-0">7 <small class="text-muted">days</small></h2>
+                                    <p class="text-muted mb-0">Current streak</p>
+                                </div>
+                                <div>
+                                    <i class="bi bi-fire text-danger" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="mb-0 text-center">
+                                <small class="text-muted">Keep going! Study today to maintain your streak.</small>
+                            </p>
+                        </div>
+                    </div>
+                </aside>
                 
-                <!-- Tab Content -->
-                <div class="tab-content" id="myTabContent">
-                    <!-- My Courses Tab -->
-                    <div class="tab-pane fade show active" id="courses-pane" role="tabpanel">
-                        <h4 class="mb-4">My Learning Path</h4>
+                <!-- Main Content Area -->
+                <div class="col-lg-9">
+                    <!-- Tabs Navigation -->
+                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="courses-tab" data-bs-toggle="tab" data-bs-target="#courses-pane" type="button" role="tab" aria-controls="courses-pane" aria-selected="true">My Courses</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="achievements-tab" data-bs-toggle="tab" data-bs-target="#achievements-pane" type="button" role="tab" aria-controls="achievements-pane" aria-selected="false">Achievements</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="recommended-tab" data-bs-toggle="tab" data-bs-target="#recommended-pane" type="button" role="tab" aria-controls="recommended-pane" aria-selected="false">Recommended</button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="myTabContent">
+                        <!-- My Courses Tab -->
+                        <div class="tab-pane fade show active" id="courses-pane" role="tabpanel" aria-labelledby="courses-tab">
+                            <h4 class="mb-4">My Learning Path</h4>
+                            
+                            <div class="row g-4" id="courses">
+                                <!-- Course Card 1 -->
+                                <div class="col-md-6 col-lg-4">
+                                    <article class="card course-card h-100">
+                                        <img src="images/html.jpg" class="card-img-top" alt="HTML5 Basics" width="100%" height="180">
+                                        <div class="card-body">
+                                            <span class="badge badge-custom mb-2">In Progress</span>
+                                            <h5 class="card-title">HTML5 Fundamentals</h5>
+                                            <p class="card-text">Learn the basics of HTML5 and build your first web pages from scratch.</p>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">65% Complete</small>
+                                                <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                
+                                <!-- Course Card 2 -->
+                                <div class="col-md-6 col-lg-4">
+                                    <article class="card course-card h-100">
+                                        <img src="images/css3.jpg" class="card-img-top" alt="CSS3 Course" width="100%" height="180">
+                                        <div class="card-body">
+                                            <span class="badge badge-custom mb-2">In Progress</span>
+                                            <h5 class="card-title">CSS3 Styling Mastery</h5>
+                                            <p class="card-text">Style your websites with modern CSS techniques and responsive design.</p>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">40% Complete</small>
+                                                <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                
+                                <!-- Course Card 3 -->
+                                <div class="col-md-6 col-lg-4">
+                                    <article class="card course-card h-100">
+                                        <img src="images/javascript.jpg" class="card-img-top" alt="JavaScript Course" width="100%" height="180">
+                                        <div class="card-body">
+                                            <span class="badge bg-secondary mb-2">Coming Up</span>
+                                            <h5 class="card-title">JavaScript Essentials</h5>
+                                            <p class="card-text">Add interactivity to your websites with JavaScript and DOM manipulation.</p>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">0% Complete</small>
+                                                <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                
+                                <!-- Course Card 4 -->
+                                <div class="col-md-6 col-lg-4">
+                                    <article class="card course-card h-100">
+                                        <img src="images/Bootstrap-img.png" class="card-img-top" alt="Bootstrap Course" width="100%" height="180">
+                                        <div class="card-body">
+                                            <span class="badge bg-success mb-2">Completed</span>
+                                            <h5 class="card-title">Bootstrap Framework</h5>
+                                            <p class="card-text">Build responsive websites quickly with the Bootstrap framework.</p>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">100% Complete</small>
+                                                <a href="#" class="btn btn-sm btn-outline-primary">Review</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                
+                                <!-- Course Card 5 -->
+                                <div class="col-md-6 col-lg-4">
+                                    <article class="card course-card h-100">
+                                        <img src="images/responsive-web-design-.jpg" class="card-img-top" alt="Responsive Design" width="100%" height="180">
+                                        <div class="card-body">
+                                            <span class="badge badge-custom mb-2">In Progress</span>
+                                            <h5 class="card-title">Responsive Web Design</h5>
+                                            <p class="card-text">Create websites that look great on all devices with responsive techniques.</p>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">20% Complete</small>
+                                                <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                
+                                <!-- Course Card 6 -->
+                                <div class="col-md-6 col-lg-4">
+                                    <article class="card course-card h-100">
+                                        <img src="images/Web-Development.jpg" class="card-img-top" alt="Web Projects" width="100%" height="180">
+                                        <div class="card-body">
+                                            <span class="badge bg-secondary mb-2">Coming Up</span>
+                                            <h5 class="card-title">Web Project Portfolio</h5>
+                                            <p class="card-text">Build 5 real-world projects to showcase your front-end development skills.</p>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">0% Complete</small>
+                                                <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <div class="row g-4" id="courses">
-                            <!-- Course Card 1 -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card course-card">
-                                    <img src="images/html.jpg" class="card-img-top" alt="HTML5 Basics">
-                                    <div class="card-body">
-                                        <span class="badge badge-custom mb-2">In Progress</span>
-                                        <h5 class="card-title">HTML5 Fundamentals</h5>
-                                        <p class="card-text">Learn the basics of HTML5 and build your first web pages from scratch.</p>
-                                        <div class="progress mb-3" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        <!-- Achievements Tab -->
+                        <div class="tab-pane fade" id="achievements-pane" role="tabpanel" aria-labelledby="achievements-tab">
+                            <h4 class="mb-4">Your Achievements</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-4 text-center">
+                                    <div class="card h-100 p-3">
+                                        <i class="bi bi-trophy text-warning" style="font-size: 3rem;"></i>
+                                        <div class="card-body">
+                                            <h5 class="card-title">First HTML Page</h5>
+                                            <p class="card-text">Successfully created your first HTML webpage</p>
+                                            <small class="text-muted">Earned on: April 10, 2025</small>
                                         </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                           
-                                            <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4 text-center">
+                                    <div class="card h-100 p-3">
+                                        <i class="bi bi-star text-warning" style="font-size: 3rem;"></i>
+                                        <div class="card-body">
+                                            <h5 class="card-title">CSS Master</h5>
+                                            <p class="card-text">Completed 3 styling challenges in a row</p>
+                                            <small class="text-muted">Earned on: April 12, 2025</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4 text-center">
+                                    <div class="card h-100 p-3 bg-light">
+                                        <i class="bi bi-lock text-secondary" style="font-size: 3rem;"></i>
+                                        <div class="card-body">
+                                            <h5 class="card-title">JavaScript Ninja</h5>
+                                            <p class="card-text">Complete the JavaScript course to unlock</p>
+                                            <small class="text-muted">Not yet earned</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Course Card 2 -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card course-card">
-                                    <img src="images/css3.jpg" class="card-img-top" alt="CSS3 Course">
-                                    <div class="card-body">
-                                        <span class="badge badge-custom mb-2">In Progress</span>
-                                        <h5 class="card-title">CSS3 Styling Mastery</h5>
-                                        <p class="card-text">Style your websites with modern CSS techniques and responsive design.</p>
-                                        <div class="progress mb-3" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        
+                        <!-- Recommended Tab -->
+                        <div class="tab-pane fade" id="recommended-pane" role="tabpanel" aria-labelledby="recommended-tab">
+                            <h4 class="mb-4">Recommended For You</h4>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <article class="card course-card h-100">
+                                        <img src="images/react.svg" class="card-img-top" alt="React Course" width="100%" height="180">
+                                        <div class="card-body">
+                                            <h5 class="card-title">React.js Fundamentals</h5>
+                                            <p class="card-text">Based on your progress, this course would be a great next step!</p>
+                                            <a href="#" class="btn btn-outline-primary">Add to Learning Path</a>
                                         </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                           
-                                            <a href="#" class="btn btn-sm btn-primary">Continue</a>
+                                    </article>
+                                </div>
+                                <div class="col-md-6">
+                                    <article class="card course-card h-100">
+                                        <img src="images/cssanime.jpg" class="card-img-top" alt="CSS Animation" width="100%" height="180">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Advanced CSS Animations</h5>
+                                            <p class="card-text">Enhance your websites with impressive animations and transitions.</p>
+                                            <a href="#" class="btn btn-outline-primary">Add to Learning Path</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Resource Section -->
+                    <section class="mt-5" id="resources" aria-labelledby="resources-heading">
+                        <h4 class="mb-4" id="resources-heading">Learning Resources</h4>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <caption class="visually-hidden">Learning Resources</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Resource Type</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge bg-info">eBook</span></td>
+                                        <td>HTML5 & CSS3 for Beginners</td>
+                                        <td>A comprehensive guide to modern web development basics</td>
+                                        <td><a href="#" class="btn btn-sm btn-outline-primary">Download</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-success">Video</span></td>
+                                        <td>Responsive Design Workshop</td>
+                                        <td>Learn how to build websites that adapt to any screen size</td>
+                                        <td><a href="#" class="btn btn-sm btn-outline-primary">Watch</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-warning">Cheatsheet</span></td>
+                                        <td>CSS Flexbox & Grid</td>
+                                        <td>Quick reference guide for modern CSS layout techniques</td>
+                                        <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-danger">Challenge</span></td>
+                                        <td>7-Day CSS Challenge</td>
+                                        <td>Daily tasks to improve your CSS skills</td>
+                                        <td><a href="#" class="btn btn-sm btn-outline-primary">Start</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Latest Course Carousel -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h3 class="text-center mb-4">Latest Courses</h3>
+                <div id="courseCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card border-0 shadow">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="images/Python.jpg" class="img-fluid rounded-start h-100" alt="Python Course" width="100%">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <span class="badge bg-danger">New</span>
+                                                    <h5 class="card-title mt-2">Python for Web Development</h5>
+                                                    <p class="card-text">Learn how to use Python for server-side web development with Django and Flask frameworks.</p>
+                                                    <p class="text-muted"><i class="bi bi-clock"></i> 24 hours of content • 5 projects • Beginner friendly</p>
+                                                    <a href="#" class="btn btn-primary">Explore Course</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Course Card 3 -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card course-card">
-                                    <img src="images/javascript.jpg" class="card-img-top" alt="JavaScript Course">
-                                    <div class="card-body">
-                                        <span class="badge bg-secondary mb-2">Coming Up</span>
-                                        <h5 class="card-title">JavaScript Essentials</h5>
-                                        <p class="card-text">Add interactivity to your websites with JavaScript and DOM manipulation.</p>
-                                        <div class="progress mb-3" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            
-                                            <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Course Card 4 -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card course-card">
-                                    <img src="images/Bootstrap-img.png" class="card-img-top" alt="Bootstrap Course">
-                                    <div class="card-body">
-                                        <span class="badge bg-success mb-2">Completed</span>
-                                        <h5 class="card-title">Bootstrap Framework</h5>
-                                        <p class="card-text">Build responsive websites quickly with the Bootstrap framework.</p>
-                                        <div class="progress mb-3" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                          
-                                            <a href="#" class="btn btn-sm btn-outline-primary">Review</a>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card border-0 shadow">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="images/javascript.jpg" class="img-fluid rounded-start h-100" alt="JavaScript Course" width="100%">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <span class="badge bg-danger">New</span>
+                                                    <h5 class="card-title mt-2">Advanced JavaScript Patterns</h5>
+                                                    <p class="card-text">Master advanced JavaScript concepts like closures, prototypes, and async programming.</p>
+                                                    <p class="text-muted"><i class="bi bi-clock"></i> 18 hours of content • 3 projects • Intermediate level</p>
+                                                    <a href="#" class="btn btn-primary">Explore Course</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Course Card 5 -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card course-card">
-                                    <img src="images/responsive-web-design-.jpg" class="card-img-top" alt="Responsive Design">
-                                    <div class="card-body">
-                                        <span class="badge badge-custom mb-2">In Progress</span>
-                                        <h5 class="card-title">Responsive Web Design</h5>
-                                        <p class="card-text">Create websites that look great on all devices with responsive techniques.</p>
-                                        <div class="progress mb-3" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                         
-                                            <a href="#" class="btn btn-sm btn-primary">Continue</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Course Card 6 -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card course-card">
-                                    <img src="images/Web-Development.jpg" class="card-img-top" alt="Web Projects">
-                                    <div class="card-body">
-                                        <span class="badge bg-secondary mb-2">Coming Up</span>
-                                        <h5 class="card-title">Web Project Portfolio</h5>
-                                        <p class="card-text">Build 5 real-world projects to showcase your front-end development skills.</p>
-                                        <div class="progress mb-3" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                          
-                                            <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card border-0 shadow">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="images/uiux.jpg" class="img-fluid rounded-start h-100" alt="UI/UX Course" width="100%">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <span class="badge bg-danger">New</span>
+                                                    <h5 class="card-title mt-2">UI/UX Design for Developers</h5>
+                                                    <p class="card-text">Learn UI/UX principles to improve the design and usability of your applications.</p>
+                                                    <p class="text-muted"><i class="bi bi-clock"></i> 15 hours of content • 4 projects • All levels</p>
+                                                    <a href="#" class="btn btn-primary">Explore Course</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Achievements Tab -->
-                    <div class="tab-pane fade" id="achievements-pane" role="tabpanel">
-                        <h4 class="mb-4">Your Achievements</h4>
-                        <div class="row">
-                            <div class="col-md-4 mb-4 text-center">
-                                <div class="card h-100 p-3">
-                                    <i class="bi bi-trophy text-warning" style="font-size: 3rem;"></i>
-                                    <div class="card-body">
-                                        <h5 class="card-title">First HTML Page</h5>
-                                        <p class="card-text">Successfully created your first HTML webpage</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4 text-center">
-                                <div class="card h-100 p-3">
-                                    <i class="bi bi-star text-warning" style="font-size: 3rem;"></i>
-                                    <div class="card-body">
-                                        <h5 class="card-title">CSS Master</h5>
-                                        <p class="card-text">Completed 3 styling challenges in a row</p>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4 text-center">
-                                <div class="card h-100 p-3 bg-light">
-                                    <i class="bi bi-lock text-secondary" style="font-size: 3rem;"></i>
-                                    <div class="card-body">
-                                        <h5 class="card-title">JavaScript Ninja</h5>
-                                        <p class="card-text">Complete the JavaScript course to unlock</p>
-                                        <small class="text-muted">Not yet earned</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#courseCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#courseCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#courseCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#courseCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#courseCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    
-                    <!-- Recommended Tab -->
-                    <div class="tab-pane fade" id="recommended-pane" role="tabpanel">
-                        <h4 class="mb-4">Recommended For You</h4>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card course-card">
-                                    <img src="images/react.svg" class="card-img-top" alt="React Course">
-                                    <div class="card-body">
-                                        <h5 class="card-title">React.js Fundamentals</h5>
-                                        <p class="card-text">Based on your progress, this course would be a great next step!</p>
-                                        <a href="#" class="btn btn-outline-primary">Add to Learning Path</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card course-card">
-                                    <img src="images/cssanime.jpg" class="card-img-top" alt="CSS Animation">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Advanced CSS Animations</h5>
-                                        <p class="card-text">Enhance your websites with impressive animations and transitions.</p>
-                                        <a href="#" class="btn btn-outline-primary">Add to Learning Path</a>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+            </div>
+        </section>
+    
+  <!-- Collapsible Content -->
+  <section class="container my-5">
+    <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            How do I track my progress?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Your progress is automatically tracked as you complete lessons and quizzes. You can view your overall progress in your profile sidebar and detailed progress within each course. The platform saves your progress so you can continue where you left off.</p>
                         </div>
                     </div>
                 </div>
-                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Can I download course materials?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Yes, most course materials are available for download including PDFs, code examples, and cheatsheets. Look for the download button within each lesson or in the resources section of your course dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+           
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        How do I get help if I'm stuck?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>We offer multiple support options. You can ask questions in our community forum, join live Q&A sessions with instructors, or book a 1-on-1 session with a mentor. Most courses also have a dedicated discussion area where you can get help from fellow students.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        Are there coding exercises?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>Absolutely! Each course contains interactive coding exercises, challenges, and projects. Our built-in code editor allows you to practice and receive immediate feedback. You'll also build portfolio-worthy projects that demonstrate your skills to potential employers.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-  
-   
+</div>
+
+</section>
+
 <!-- Contact Form -->
 <section class="bg-light py-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <h3 class="text-center mb-4">Get In Touch</h3>
-                <form class="card shadow-sm">
+                <form class="card shadow-sm border border-success">
                     <div class="card-body p-4">
                         <div class="mb-3">
                             <label for="name" class="form-label">Your Name</label>
@@ -365,10 +612,64 @@
     </div>
 </div>
 
+<!-- Footer -->
+<footer class="bg-dark text-white">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5><i class="bi bi-code-square"></i> CodeMaster</h5>
+                <p>Learn coding from scratch with structured paths, interactive lessons, and real-world projects.</p>
+                <div class="d-flex">
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="#courses" class="text-white text-decoration-none">Courses</a></li>
+                    <li><a href="#resources" class="text-white text-decoration-none">Resources</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                <h6>Support</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Help Center</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Community</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <h6>Subscribe to Our Newsletter</h6>
+                <p>Get the latest updates, news and special offers</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="subscribe-btn">
+                    <button class="btn btn-primary" type="button" id="subscribe-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">&copy; 2025 CodeMaster Learning Platform. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-white text-decoration-none me-3">Terms of Service</a>
+                <a href="#" class="text-white text-decoration-none">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
 </html>
+
