@@ -193,27 +193,4 @@ car1.increment_odometer(8)
 print(car1.read_odometer())
 
 
-"""
-Aqsa Shahid
-Lab 11, class in Python (extra points)
-"""
-class student:
-    def __init__(self, name, age, grade):
-
-    # Initialize attributes
-        self.name=name
-        self.age=age
-        self.grade=grade
-
-student_1=student('Anna', '19', '10')
-student_2=student('Elizbeth', '20','20')
-student_3=student('Robert', '21', '30')
-
-
-print(student_1)
-
-
-
-
-
         
