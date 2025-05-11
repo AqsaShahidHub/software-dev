@@ -1,0 +1,158 @@
+/* Basic reset for more consistent rendering */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+img { 
+    width: 100%; 
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    text-align: center; 
+    color: red;
+    margin-bottom: 1em;
+}
+
+.introimgcontainer, .maincontainer {
+    width: 700px;
+    margin: 2em auto;
+    max-width: 100%; /* For mobile responsiveness */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.maincontainer {
+    padding: 2rem;
+    border: solid gray 2px;
+}
+
+
+
+/* Form styles - Missing from original */
+form {
+    margin: 1.5rem 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button, 
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #ff9900;
+}
+
+/* Flash message styles - Missing from original */
+.infomessage {
+    list-style: none;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.infomessage li {
+    margin-bottom: 0.5rem;
+}
+
+.infomessage li:last-child {
+    margin-bottom: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .introimgcontainer, .maincontainer {
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+  
+    
+    form {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Flask App{% endblock %}
+
+{% block content %}
+    <h1 class="title">Welcome to Flask! {{ username }}</h1>
+    <figure class="introimgcontainer">
+        <img src="{{ url_for('static', filename='clouds-cloudy-countryside-236047.jpg') }}" class="introimg" alt="Countryside clouds">
+    </figure>
+    <section class="maincontainer">
+        <ul>
+            {% for eachfruit in listfruits %}
+                <li>{{ eachfruit }}</li>
+            {% endfor %}
+        </ul>
+        {% if checkfruit in listfruits %}
+            <p>Great! We have {{ checkfruit }} today</p>
+        {% else %}
+            <p>{{ checkfruit }} is not in the list!</p>
+        {% endif %}
+    </section>
+    
+    <h2>HTTP request</h2>
+    <form method="POST" action="{{ url_for('index') }}">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required/>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+    <h2><a href="{{ url_for('users') }}">Add new employee</a></h2>
+{% endblock %}
