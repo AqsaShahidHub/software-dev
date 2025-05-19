@@ -7,35 +7,64 @@ TechTreasures is a fully functional **e-commerce web application** built with Fl
 ##  Project Structure 
 
 techtreasures/
+
 ├── app.py # Application entry point and route definitions
+
 ├── config.py # Configuration settings
+
 ├── models.py # Database models and relationships
+
 ├── requirements.txt # Project dependencies
+
 ├── static/ # Static assets
-│ ├── css/ # CSS stylesheets
-│ │ └── style.css # Custom styles
-│ └── images/ # Product and site images
-└── templates/ # HTML templates
-├── about.html # About page
-├── base.html # Base template with common elements
-├── cart.html # Shopping cart
-├── checkout.html # Checkout process
-├── dashboard.html # User dashboard
-├── index.html # Homepage
-├── login.html # User login
-├── order_*.html # Order-related templates
-├── product_detail.html # Individual product view
-├── products.html # Product listing
-└── register.html # User registration
+
+      └── css/ # CSS stylesheets
+
+      └── style.css # Custom styles
+
+      └── images/ # Product and site images
+
+├── templates/ # HTML templates
+
+      └── about.html # About page
+
+      └── base.html # Base template with common elements
+
+      └── cart.html # Shopping cart
+  
+      └── checkout.html # Checkout process
+  
+      └── dashboard.html # User dashboard
+  
+      └── index.html # Homepage
+  
+      └── login.html # User login
+  
+      └── order_detail.html # Order-related templates
+  
+       └── product_detail.html # Individual product view
+  
+        └── products.html # Product listing
+  
+       └── register.html # User registration
+  
 └── screenshots/ # website screenshot images
-  └── cart.jpg
-  └── home.jpg
-  └── checkout.jpg
-  └── dashboard.jpg
-  └── products.jpg
-  └── products_details.jpg
-  └── register.jpg
-  └── order_confirmation.jpg
+
+    └── cart.jpg
+    
+    └── home.jpg
+    
+    └── checkout.jpg
+    
+    └── dashboard.jpg
+    
+    └── products.jpg
+    
+    └── products_details.jpg
+    
+    └── register.jpg
+    
+    └── order_confirmation.jpg
 └── readme.md
 
 - **Front-End**:
