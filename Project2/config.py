@@ -5,7 +5,7 @@ class Config:
     SECRET_KEY = 'dev-key-for-techtreasures'
     
     # For PostgreSQL - Update with your password
-    password = quote_plus('Haider@57')
+    password = quote_plus('password')
     SQLALCHEMY_DATABASE_URI = f'postgresql://postgres:{password}@localhost:5432/techtreasures'
     
    
