@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}TechTreasures - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Animated Text -->
+<section class="hero-banner">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6 hero-text-column">
+                <h1 class="animated-heading">
+                    <span class="text-reveal">Fashion </span>
+                    <span class="text-reveal delay-1">Meets </span>
+                    <span class="text-reveal delay-2">Technology</span>
+                </h1>
+                    <p class="lead mt-3 mb-4 fade-in-up delay-3">Find the latest electronics and stylish clothing at unbeatable prices - all in one place!</p>
+            <div class="hero-buttons fade-in-up delay-4">
+                    <a href="{{ url_for('products', category='Electronics') }}" class="btn btn-electronics">Shop Electronics</a>
+                    <a href="{{ url_for('products', category='Clothing') }}" class="btn btn-clothing ms-3">Shop Clothing</a>
+            </div>
+            </div>
+            <div class="col-lg-6 position-relative hero-image-column">
+                <div class="hero-image-wrapper float-animation">
+                    <img src="{{ url_for('static', filename='images/hero-image.jpg') }}" alt="TechTreasures Featured Products" class="img-fluid hero-image">
+                    <div class="overlay-dots"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Categories Section -->
+<section class="featured-categories py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Featured <span class="highlight">Categories</span></h2>
+        
+        {% for category in categories %}
+        <section class="mb-5 category-section category-{{ category|lower }}">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="category-header {{ category|lower }}">{{ category }}</h2>
+                <a href="{{ url_for('products', category=category) }}" class="btn btn-{{ category|lower }}">View All</a>
+            </div>
+            
+            <div class="row">
+                {% for product in sample_products[category] %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 category-{{ category|lower }} product-card">
+                        <div class="position-relative card-img-container">
+                            <img src="{{ url_for('static', filename='images/' + product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                            <span class="category-badge {{ category|lower }}">{{ category }}</span>
+                            <div class="card-overlay">
+                                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-light btn-sm">Quick View</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description[:100] }}{% if product.description|length > 100 %}...{% endif %}</p>
+                            <p class="card-text text-{{ category|lower }} fw-bold">${{ "%.2f"|format(product.price) }}</p>
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-outline-{{ category|lower }}">View Details</a>
+                                
+                                <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="d-inline">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button type="submit" class="btn btn-{{ category|lower }}">
+                                        <i class="bi bi-cart-plus"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Why Choose <span class="highlight">TechTreasures</span></h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-truck"></i>
+                    </div>
+                    <h4>Fast Delivery</h4>
+                    <p>Free shipping on all orders over $50 with delivery within 2-3 business days.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h4>Quality Guarantee</h4>
+                    <p>All products are carefully selected and tested to ensure top quality.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Our friendly customer support team is available to help you anytime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if IntersectionObserver is supported
+    if ('IntersectionObserver' in window) {
+        const statsSection = document.querySelector('.stats-row');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // When stats section is visible, animate the numbers
+                        const statNumbers = document.querySelectorAll('.count-up');
+                        statNumbers.forEach(statNumber => {
+                            const value = statNumber.innerText;
+                            statNumber.classList.add('counting');
+                        });
+                        // Unobserve once triggered
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(statsSection);
+        }
+    }
+
+    // Product card hover effects
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('hovered');
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('hovered');
+        });
+    });
+  });
+</script>
+{% endblock %}

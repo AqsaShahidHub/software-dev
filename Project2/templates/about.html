@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - TechTreasures{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-5">About TechTreasures</h1>
+            
+            <div class="card shadow mb-5">
+                <div class="card-body p-5">
+                    <h2 class="mb-4">Our Story</h2>
+                    <p class="lead">TechTreasures was founded in 2023 with a simple mission: to provide quality tech products at affordable prices while offering exceptional customer service.</p>
+                    
+                    <p>What started as a small online store has quickly grown into a trusted destination for tech enthusiasts looking for the latest gadgets and accessories. Our team of experts carefully selects each product in our inventory to ensure it meets our high standards for quality, performance, and value.</p>
+                    
+                    <div class="text-center my-5">
+                        <div class="about-image-container">
+                            <img src="{{ url_for('static', filename='images/about-team.jpg') }}" alt="TechTreasures Team" class="img-fluid rounded shadow about-image animate-on-scroll">
+                        </div>
+                    </div>
+                    
+                    <h2 class="mb-4">Our Mission</h2>
+                    <p>At TechTreasures, we believe that technology should be accessible to everyone. Our mission is to:</p>
+                    
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Provide high-quality tech products at competitive prices</li>
+                        <li class="list-group-item">Offer exceptional customer service and support</li>
+                        <li class="list-group-item">Stay at the forefront of technological innovation</li>
+                        <li class="list-group-item">Create a seamless shopping experience for our customers</li>
+                        <li class="list-group-item">Build lasting relationships with our customers and partners</li>
+                    </ul>
+                    
+                    <h2 class="mb-4">Our Values</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 border-primary">
+                                <div class="card-body text-center">
+                                    <div class="value-icon mb-3">
+                                        <i class="bi bi-star text-primary" style="font-size: 2rem;"></i>
+                                    </div>
+                                    <h5 class="card-title">Quality</h5>
+                                    <p class="card-text">We only offer products that meet our high standards for quality and performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 border-primary">
+                                <div class="card-body text-center">
+                                    <div class="value-icon mb-3">
+                                        <i class="bi bi-people text-primary" style="font-size: 2rem;"></i>
+                                    </div>
+                                    <h5 class="card-title">Customer Focus</h5>
+                                    <p class="card-text">Our customers are at the center of everything we do.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 border-primary">
+                                <div class="card-body text-center">
+                                    <div class="value-icon mb-3">
+                                        <i class="bi bi-arrow-repeat text-primary" style="font-size: 2rem;"></i>
+                                    </div>
+                                    <h5 class="card-title">Innovation</h5>
+                                    <p class="card-text">We constantly seek new products and ways to improve our service.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow mb-5">
+                <div class="card-body p-5">
+                    <h2 class="mb-4">Meet Our Team</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="team-member text-center">
+                                <div class="team-image-container mb-3">
+                                    <img src="{{ url_for('static', filename='images/team-member1.jpg') }}" alt="Team Member" class="img-fluid rounded-circle team-image">
+                                </div>
+                                <h5>Jane Doe</h5>
+                                <p class="text-muted">Founder & CEO</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="team-member text-center">
+                                <div class="team-image-container mb-3">
+                                    <img src="{{ url_for('static', filename='images/team-member2.jpg') }}" alt="Team Member" class="img-fluid rounded-circle team-image">
+                                </div>
+                                <h5>John Smith</h5>
+                                <p class="text-muted">CTO</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="team-member text-center">
+                                <div class="team-image-container mb-3">
+                                    <img src="{{ url_for('static', filename='images/team-member3.jpg') }}" alt="Team Member" class="img-fluid rounded-circle team-image">
+                                </div>
+                                <h5>Sarah Johnson</h5>
+                                <p class="text-muted">Customer Support Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <h2 class="mb-4">Contact Us</h2>
+                    <p>Have questions, comments, or suggestions? We'd love to hear from you! Get in touch with our team using the contact information below or fill out our contact form.</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <div class="contact-item">
+                                <h5><i class="bi bi-geo-alt text-primary me-2"></i> Our Location</h5>
+                                <p>123 Tech Street<br>Digital City, DC 12345<br>United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="contact-item">
+                                <h5><i class="bi bi-envelope text-primary me-2"></i> Email Us</h5>
+                                <p>info@techtreasures.com<br>support@techtreasures.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <div class="contact-item">
+                                <h5><i class="bi bi-telephone text-primary me-2"></i> Call Us</h5>
+                                <p>Toll-free: (800) 123-4567<br>Local: (123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="contact-item">
+                                <h5><i class="bi bi-clock text-primary me-2"></i> Business Hours</h5>
+                                <p>Monday - Friday: 9am - 5pm<br>Saturday: 10am - 2pm<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="mb-3">Send Us a Message</h5>
+                    <form id="contactForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const subject = document.getElementById('contactSubject').value;
+        const message = document.getElementById('contactMessage').value;
+        
+        // In a real application, this would send the data to the server
+        console.log('Contact form submitted:', { name, email, subject, message });
+        
+        // Show success message
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
+        alertDiv.innerHTML = `
+            Thank you for your message, ${name}! We'll get back to you as soon as possible.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        this.insertAdjacentElement('afterend', alertDiv);
+        
+        // Reset form
+        this.reset();
+        
+        // Auto dismiss after 5 seconds
+        setTimeout(() => {
+            const alert = new bootstrap.Alert(alertDiv);
+            alert.close();
+        }, 5000);
+    });
+    
+    // Add animations to team member images
+    const teamImages = document.querySelectorAll('.team-image');
+    teamImages.forEach(image => {
+        image.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        image.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+</script>
+{% endblock %}

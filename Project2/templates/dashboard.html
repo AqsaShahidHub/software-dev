@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}My Dashboard - TechTreasures{% endblock %}
+
+{% block extra_js %}
+<!-- Modals for order cancellation -->
+{% for order in orders %}
+    {% if order.status == 'processing' or (order.status == 'completed' and (now - order.order_date).total_seconds() < 86400) %}
+    <div class="modal fade" id="cancelOrderModal{{ order.id }}" tabindex="-1" aria-labelledby="cancelOrderModalLabel{{ order.id }}" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelOrderModalLabel{{ order.id }}">Cancel Order #{{ order.order_number }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to cancel this order?</p>
+                    <p class="text-danger"><strong>Note:</strong> This action cannot be undone.</p>
+                    {% if order.status == 'completed' %}
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle"></i> Completed orders can only be cancelled within 24 hours of purchase.
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep Order</button>
+                    <form action="{{ url_for('cancel_order', order_id=order.id) }}" method="post">
+                        <button type="submit" class="btn btn-danger">Yes, Cancel Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">My Dashboard</h1>
+    
+    <div class="row mb-4">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Account Information</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Name:</strong> {{ current_user.first_name }} {{ current_user.last_name }}</p>
+                    <p><strong>Username:</strong> {{ current_user.username }}</p>
+                    <p><strong>Email:</strong> {{ current_user.email }}</p>
+                    <p><strong>Address:</strong> {{ current_user.address }}</p>
+                    <p><strong>Member Since:</strong> {{ current_user.created_at.strftime('%B %d, %Y') }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Order Summary</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="me-3">
+                            <i class="bi bi-bag-check" style="font-size: 2rem; color: #0d6efd;"></i>
+                        </div>
+                        <div>
+                            <h3 class="mb-0">{{ orders|length }}</h3>
+                            <p class="mb-0">Total Orders</p>
+                        </div>
+                    </div>
+                    
+                    {% if orders %}
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="bi bi-currency-dollar" style="font-size: 2rem; color: #198754;"></i>
+                        </div>
+                        <div>
+                            <h3 class="mb-0">${{ "%.2f"|format(total_spent) }}</h3>
+                            <p class="mb-0">Total Spent</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">My Orders</h5>
+        </div>
+        <div class="card-body">
+            {% if orders %}
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{ order.order_number }}</td>
+                                <td>{{ order.order_date.strftime('%Y-%m-%d') }}</td>
+                                <td>
+                                    {% set item_count = order.items|length %}
+                                    {{ item_count }} item{% if item_count != 1 %}s{% endif %}
+                                </td>
+                                <td>${{ "%.2f"|format(order.total_amount + order.tax_amount + order.shipping_amount) }}</td>
+                                <td>
+                                    {% if order.status == 'completed' %}
+                                        <span class="badge bg-success">Completed</span>
+                                    {% elif order.status == 'processing' %}
+                                        <span class="badge bg-warning">Processing</span>
+                                    {% elif order.status == 'shipped' %}
+                                        <span class="badge bg-info">Shipped</span>
+                                    {% elif order.status == 'cancelled' %}
+                                        <span class="badge bg-danger">Cancelled</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">{{ order.status }}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('order_details', order_id=order.id) }}" class="btn btn-sm btn-primary">View Details</a>
+                                    {% if order.status == 'processing' %}
+                                        <button type="button" class="btn btn-sm btn-danger" 
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#cancelOrderModal{{ order.id }}">
+                                            Cancel
+                                        </button>
+                                    {% elif order.status == 'completed' %}
+                                        {% set time_difference = (now - order.order_date).total_seconds() %}
+                                        {% if time_difference < 86400 %}
+                                            <button type="button" class="btn btn-sm btn-danger"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#cancelOrderModal{{ order.id }}">
+                                                Cancel
+                                            </button>
+                                        {% endif %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="text-center py-4">
+                    <div class="mb-3">
+                        <i class="bi bi-bag" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5>You haven't placed any orders yet.</h5>
+                    <p>Browse our products and place your first order today!</p>
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">Shop Now</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
